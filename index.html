@@ -1,107 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revenge</title>
     <style>
-        /* 彻底清除边距、边框、装饰 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #000000;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        /* 主容器：仅负责居中与间距，无任何装饰 */
-        .container {
-            text-align: center;
-            max-width: 90%;
-            width: 500px;
-            padding: 1rem;
-        }
-
-        /* 提示文字：白色，大而清晰 */
-        .prompt {
-            color: #ffffff;
-            font-size: 1.8rem;
-            font-weight: 500;
-            line-height: 1.3;
-            margin-bottom: 2.5rem;
-            letter-spacing: -0.2px;
-        }
-
-        /* 按钮组：水平居中，间距自然 */
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        /* 极简按钮样式：无背景、无边框、无阴影、无圆角 */
-        .btn {
-            color: #ffffff;
-            background: transparent;
-            border: none;
-            font-size: 1.25rem;
-            font-weight: 400;
-            text-decoration: none;
-            cursor: pointer;
-            padding: 0.5rem 0.8rem;
-            transition: opacity 0.2s;
-            display: inline-block;
-            font-family: inherit;
-        }
-
-        /* 仅用透明度变化反馈交互，无任何装饰 */
-        .btn:hover {
-            opacity: 0.7;
-        }
-
-        .btn:active {
-            opacity: 0.5;
-        }
-
-        /* 移动端适配：保持简洁 */
-        @media (max-width: 500px) {
-            .prompt {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
-            }
-            .btn {
-                font-size: 1.1rem;
-                padding: 0.4rem 0.7rem;
-            }
-            .buttons {
-                gap: 1.5rem;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: black; min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: system-ui; }
+        .box { text-align: center; width: 300px; }
+        input { width: 100%; background: #111; border: 1px solid #333; color: white; padding: 12px; text-align: center; font-size: 16px; }
+        button { background: transparent; border: none; color: white; margin-top: 24px; font-size: 16px; cursor: pointer; padding: 8px 20px; }
+        button:hover { opacity: 0.7; }
     </style>
 </head>
 <body>
-<div class="container">
-    <!-- ========= 前端编辑人员自定义区 ========= -->
-    <!-- 1. 提示文字：直接修改下方文本内容即可 -->
-    <div class="prompt">Is this the end of everything?</div>
-
-    <div class="buttons">
-        <!-- 2. 下载按钮：修改 href 为实际软件下载地址（建议 .exe / .zip / .dmg 等） 
-                若文件与页面同源，可添加 download 属性强制下载；跨域则自动处理 -->
-        
-        <a class="btn" href="https://www.hajimeli.net/vividstasis">Yes</a>
-        <!-- 3. 跳转按钮：修改 href 为目标网页地址（必须以 http:// 或 https:// 开头） -->
-        <a class="btn" href="./files/G1_1.zip" download="G1_1.zip">No</a>
-    </div>
-    <!-- ========= 自定义结束 ========= -->
+<div class="box">
+    <input type="text" id="t" placeholder="Enter the Password:">
+    <button onclick="if(document.getElementById('t').value=='everythingsbegin'){let a=document.createElement('a');a.href='./files/G1_2.zip'+encodeURIComponent('success.');a.download='G1_2.zip';a.click();}">Analysis</button>
 </div>
 </body>
 </html>
